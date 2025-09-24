@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fragrances</title>
+  <meta name="view port" content="width=device-width , initial-scale=1.0">
+<style>
+  h1{
+  background-color: lightpink;
+  text-align: center;
+  padding: 8px;
+  font-family: "brush script mt" , cursive;
+  font-weight: bolder;
+  font-size :45px;
+}
+body{
+  background-color: whitesmoke;
+}
+table{
+  border-spacing: 50px;
+}
+table img{
+  border-radius: 30px;
+}
+table p{
+  font-weight: bold;
+  text-align: center;
+}
+table button{
+  border-radius: 20px;
+    font-weight: bold;
+    background-color: lavenderblush;
+    margin-left: 60px;
+}
+table button:hover{
+  background-color: lightpink;
+}
+a{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+}
+a:hover{
+    color: palevioletred;
+}
+footer{
+  background-color: lightpink;
+  padding: 45px;
+  text-align: center;
+}
+.head{
+  background-color: lightpink;
+  font-weight: bold;
+  padding: 30px;
+}
+.head a{
+  text-decoration: none;
+  color: black;
+  margin: 50px;
+  font-size: 24px;
+  padding: 5px;
+}
+.head a:hover{
+  color: palevioletred;
+  text-decoration: underline;
+}
+.Search{
+  border-radius: 30px;
+  background-color: white;
+  height: 30px;
+  width: 200px;
+}
+</style>
+</head>
+<body>
+  <div class="head">
+<h1>Fragrances</h1>
+<a href="index.html" target="_self">Home</a>
+<a href="offers.html" target="_self">Offers & Sales</a>
+<a href="cart.html" target="_self">My Cart</a>
+<a href="account.html" target="_self">My Account</a>
+<a href="checkout.html" target="_self">Check Out</a>
+<input type="text" class="Search" placeholder="  Search your product...">
+</div>
+<div class="products">
+<table>
+<tr>
+  <td>
+    <div class="product">
+   <img src="YSL.webp" alt="YSL perfume" width="200"><br>
+   <p>YSL perfume - $140.00</p>
+   <button onclick="addtocart('YSL perfume',140,'YSL.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="prada2.webp" alt="Prada perfume" width="200"><br>
+   <p>Prada perfume - $110.00</p>
+   <button onclick="addtocart('Prada perfume',110,'prada2.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="missdior.jpg" alt="Miss dior perfume" width="200"><br>
+   <p>Miss Dior perfume - $60.00</p>
+   <button onclick="addtocart('Miss Dior perfume',60,'missdior.jpg')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="sol de jenaro.webp" alt="Sol de jenaro perfume" width="200"><br>
+   <p>Sol de jenaro perfume - $40.00</p>
+   <button onclick="addtocart('Sol de jenaro perfume ',40,'sol de jenaro.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="gucci.webp" alt="Gucci perfume" width="200"><br>
+   <p>Gucci perfume - $73.00</p>
+   <button onclick="addtocart('Gucci perfume',73,'gucci.webp')">Add to cart</button>
+   </div>
+  </td>
+</tr>
+<tr>
+<td>
+  <div class="product">
+  <img src="valentino.webp" alt="Valentino perfume" width="200"><br>
+   <p>Valentino perfume - $80.00</p>
+   <button onclick="addtocart('Valentino perfume',80,'valentino.webp')">Add to cart</button>
+   </div>
+</td>
+<td>
+  <div class="product">
+  <img src="kayali.jpg" alt="KayAli perfume" width="200"><br>
+   <p>KayAli perfume - $138.00</p>
+   <button onclick="addtocart('KayAli perfume ',138,'kayali.jpg')">Add to cart</button>
+   </div>
+</td>
+<td>
+  <div class="product">
+  <img src="ariana2.png" alt="Ariana Grande perfume" width="200"><br>
+   <p>Ariana Grande perfume - $72.00</p>
+   <button onclick="addtocart('Ariana Grande perfume',72,'ariana2.png')">Add to cart</button>
+   </div>
+</td>
+<td>
+  <div class="product">
+  <img src="carolina.jpg" alt="Carolina Herrera perfume" width="200"><br>
+   <p>Carolina Herrera perfume - $200.00</p>
+   <button onclick="addtocart('Carolina Herrera perfume',200,'carolina.jpg')">Add to cart</button>
+   </div>
+</td>
+<td>
+  <div class="product">
+  <img src="chanel.webp" alt="chanel perfume" width="200"><br>
+   <p>chanel perfume - $116.00</p>
+   <button onclick="addtocart('chanel perfume',116,'chanel.webp')">Add to cart</button>
+   </div>
+</td>
+</tr>
+</table>
+</div>
+<footer>
+<h1>N Cosemetics</h1>
+</footer>
+<script>
+  document.querySelector(".Search").addEventListener("input" ,function (){
+  let search=this.value.toLowerCase();
+  let products=document.querySelectorAll(".product");
+  products.forEach(product => {
+    let name=product.querySelector("p").innerText.toLowerCase();
+    if(name.includes(search)){
+       product.style.display="block";
+    }
+    else{
+      product.style.display="none";
+    }
+  });
+});
+  function addtocart(name,price,image){
+  let cart=JSON.parse(localStorage.getItem("cart")) ;
+  cart.push({ name ,  price , image});
+  localStorage.setItem("cart",JSON.stringify(cart));
+  alert(name  +" added to cart !");
+}
+</script>
+</body>
+</html>
+  

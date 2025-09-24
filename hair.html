@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Haircare products</title>
+  <meta name="view port" content="width=device-width , initial-scale=1.0">
+<style>
+h1{
+  background-color: lightpink;
+  text-align: center;
+  padding: 8px;
+  font-family: "brush script mt" , cursive;
+  font-weight: bolder;
+  font-size :45px;
+}
+body{
+  background-color: whitesmoke;
+}
+table{
+  border-spacing: 50px;
+}
+table img{
+  border-radius: 30px;
+}
+table p{
+  font-weight: bold;
+  text-align: center;
+}
+table button{
+  border-radius: 20px;
+    font-weight: bold;
+    background-color: lavenderblush;
+    margin-left: 60px;
+}
+table button:hover{
+  background-color: lightpink;
+}
+a{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+}
+a:hover{
+    color: palevioletred;
+}
+footer{
+  background-color: lightpink;
+  padding: 45px;
+  text-align: center;
+}
+.head{
+  background-color: lightpink;
+  font-weight: bold;
+  padding: 30px;
+}
+.head a{
+  text-decoration: none;
+  color: black;
+  margin: 50px;
+  font-size: 24px;
+  padding: 5px;
+}
+.head a:hover{
+  color: palevioletred;
+  text-decoration: underline;
+}
+.Search{
+  border-radius: 30px;
+  background-color: white;
+  height: 30px;
+  width: 200px;
+}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Hair Products</h1>
+<a href="index.html" target="_self">Home</a>
+<a href="offers.html" target="_self">Offers & Sales</a>
+<a href="cart.html" target="_self">My Cart</a>
+<a href="account.html" target="_self">My Account</a>
+<a href="checkout.html" target="_self">Check Out</a>
+<input type="text" class="Search" placeholder="  Search your product...">
+</div>
+<div class="products">
+<table>
+<tr>
+  <td>
+    <div class="product">
+   <img src="kerastase.webp" alt="kerastase hair serum" width="200"><br>
+   <p>kerastase hair serum - $62.00</p>
+   <button onclick="addtocart('kerastase hair serum',62,'kerastase.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="gisouhair.jpg" alt="Gisou hair oil" width="200"><br>
+   <p>Gisou hair oil - $25.00</p>
+   <button onclick="addtocart('Gisou hair oil',25,'gisouhair.jpg')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="ouaicon.webp" alt="OUAI hair conditioner" width="200"><br>
+   <p>OUAI hair conditioner - $64.00</p>
+   <button onclick="addtocart('OUAI hair conditioner',64,'ouaicon.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="gi2.avif" alt="Gisou Honey hair mask" width="178"><br>
+   <P>Gisou Honey hair mask - $33.00</p>
+   <button onclick="addtocart('Gisou Honey hair mask',33,'gi2.avif')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="shampoo.png" alt="kerastase hair shampoo" width="200"><br>
+   <p>kerastase hair shampoo - $46.00</p>
+   <button onclick="addtocart('kerastase hair shampoo',46,'shampoo.png')">Add to cart</button>
+   </div>
+  </td>
+</tr>
+<tr>
+<td>
+    <div class="product">
+  <img src="ola2.png" alt="Olaplex hair oil" width="200"><br>
+   <p>Olaplex hair oil - $30.00</p>
+   <button onclick="addtocart('Olaplex hair oil',30,'ola2.png')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="pantene.jpg" alt="Pantene curl cream" width="203"><br>
+   <p>Pantene curl cream - $44.00</p>
+   <button onclick="addtocart('Pantene curl cream',44,'pantene.jpg')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="loriel.jpg" alt="L'OREAL shampoo" width="160"><br>
+   <p>L'OREAL repair shampoo - $46.00</p>
+   <button onclick="addtocart(`L'OREAL repair shampoo`,46,'loriel.jpg')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="dyson.avif" alt="Dyson Airwrap" width="187"><br>
+   <p>Dyson Airwrap - $250.00</p>
+   <button onclick="addtocart('Dyson Airwrap',250,'dyson.avif')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="solhair.avif" alt="Sol de Jenaro hair mist"  width="210"><br>
+   <p>Sol de Jenaro hair mist - $26.00</p>
+   <button onclick="addtocart('Sol de Jenaro hair mist',26,'solhair.avif')">Add to cart</button>
+   </div>
+</td>
+</tr>
+</table>
+</div>
+<footer>
+<h1>N Cosemetics</h1>
+</footer>
+<script>
+    document.querySelector(".Search").addEventListener("input" ,function (){
+  let search=this.value.toLowerCase();
+  let products=document.querySelectorAll(".product");
+  products.forEach(product => {
+    let name=product.querySelector("p").innerText.toLowerCase();
+    if(name.includes(search)){
+       product.style.display="block";
+    }
+    else{
+      product.style.display="none";
+    }
+  });
+});
+    function addtocart(name,price,image){
+  let cart=JSON.parse(localStorage.getItem("cart"));
+  cart.push({ name ,  price , image});
+  localStorage.setItem("cart",JSON.stringify(cart));
+  alert(name  +" added to cart !");
+}
+</script>
+</body>
+</html>

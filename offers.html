@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Offers & Sales</title>
+<meta name="view port" content="width=device-width , initial-scale=1.0">
+<style>
+h1{
+  background-color: lightpink;
+  text-align: center;
+  padding: 8px;
+  font-family: "brush script mt" , cursive;
+  font-weight: bolder;
+  font-size :45px;
+}
+body{
+  background-color: whitesmoke;
+}
+table{
+  border-spacing: 45px;
+}
+table img{
+  border-radius: 30px;
+}
+table p{
+  font-weight: bold;
+  text-align: center;
+}
+table button{
+  border-radius: 20px;
+    font-weight: bold;
+    background-color: lavenderblush;
+    margin-left: 60px;
+}
+table button:hover{
+  background-color: lightpink;
+}
+a{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+}
+a:hover{
+    color: palevioletred;
+}
+footer{
+  background-color: lightpink;
+  padding: 45px;
+  text-align: center;
+}
+.new{
+    color: brown;
+
+}
+.head{
+  background-color: lightpink;
+  font-weight: bold;
+  padding: 30px;
+}
+.head a{
+  text-decoration: none;
+  color: black;
+  margin: 50px;
+  font-size: 24px;
+  padding: 5px;
+}
+.head a:hover{
+  color: palevioletred;
+  text-decoration: underline;
+}
+.Search{
+  border-radius: 30px;
+  background-color: white;
+  height: 30px;
+  width: 200px;
+}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Offers & Sales</h1>
+<a href="index.html" target="_self">Home</a>
+<a href="offers.html" target="_self">Offers & Sales</a>
+<a href="cart.html" target="_self">My Cart</a>
+<a href="account.html" target="_self">My Account</a>
+<a href="checkout.html" target="_self">Check Out</a>
+<input type="text" class="Search" placeholder="  Search your product...">
+</div>
+<div class="products">
+<table>
+<tr>
+  <td>
+    <div class="product">
+   <img src="fentyice.jpg" alt="Fenty gloss" width="200"><br>
+   <p>Fenty gloss bomb - <s>$26.00</s></p>
+   <p class="new">New price : $13.00</p>
+   <button onclick="addtocart('Fenty gloss bomb',13,'fentyice.jpg')">Add to cart</button>
+    </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="fenty2.webp" alt="Fenty shimmer puff" width="200"><br>
+   <p>Fenty shimmer puff - <s>$29.00</s></p>
+   <p class="new">New price : $14.50</p>
+   <button onclick="addtocart('Fenty shimmer puff',14.50,'fenty2.webp')">Add to cart</button>
+    </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="milk.jpg" alt="Milk volumizing Mascara" width="200"><br>
+   <p>Milk volumizing Mascara - <s>$15.00</s></p>
+   <p class="new">New price : $7.50</p>
+   <button onclick="addtocart('Milk volumizing Mascara',7.50,'milk.jpg')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="play.jpg" alt="Play Beauty blender" width="135"><br>
+   <p>Play Beauty blender - <s>$22.00</s></p>
+   <p class="new">New price : $11.00</p>
+   <button onclick="addtocart('Play Beauty blender',11,'play.jpg')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="t3.avif" alt="T3 intelligent hair dryer" width="200"><br>
+   <p>T3 intelligent hair dryer - <s>$399.99</s></p>
+   <p class="new">New price : $299.99</p>
+   <button onclick="addtocart('T3 intelligent hair dryer',299.99,'t3.avif')">Add to cart</button>
+   </div>
+  </td>
+</tr>
+<tr>
+<td>
+    <div class="product">
+  <img src="ralph.webp" alt="Ralph Lauren perfume" width="200"><br>
+   <p>Ralph Lauren perfume - <s>$124.00</s></p>
+   <p class="new">New price : $118.00</p>
+   <button onclick="addtocart('Ralph Lauren perfume',118,'ralph.webp')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="primer.webp" alt="Fenty hydrating primer" width="200"><br>
+   <p>Fenty hydrating primer - <s>$20.00</s></p>
+   <p class="new">New price : $10.00</p>
+   <button onclick="addtocart('Fenty hydrating primer',10,'primer.webp')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="eyebrush.webp" alt="Sephora eye brush set" width="200"><br>
+   <p>Sephora eye brush set - <s>$25.00</s></p>
+   <p class="new">New price : $12.50</p>
+   <button onclick="addtocart('Sephora eye brush set',12.50,'eyebrush.webp')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="cream.jpg" alt="Olaplex hair cream" width="200"><br>
+   <p>Olaplex hair cream - <s>$56.00</s></p>
+   <p class="new">New price : $46.00</p>
+   <button onclick="addtocart('Olaplex hair cream',46,'cream.jpg')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="kayset.jpg" alt="KayAli perfume set" width="200"><br>
+   <p>KayAli perfume set - <s>$138.00</s></p>
+   <p class="new">New price : $115.00</p>
+   <button onclick="addtocart('KayAli perfume set',115,'kayset.jpg')">Add to cart</button>
+   </div>
+</td>
+</tr>
+</table>
+</div>
+<footer>
+<h1>N Cosemetics</h1>
+</footer>
+<script>
+document.querySelector(".Search").addEventListener("input" ,function (){
+  let search=this.value.toLowerCase();
+  let products=document.querySelectorAll(".product");
+  products.forEach(product => {
+    let name=product.querySelector("p").innerText.toLowerCase();
+    if(name.includes(search)){
+       product.style.display="block";
+    }
+    else{
+      product.style.display="none";
+    }
+  });
+});
+function addtocart(name,price,image){
+  let cart=JSON.parse(localStorage.getItem("cart"));
+  cart.push({ name ,  price , image});
+  localStorage.setItem("cart",JSON.stringify(cart));
+  alert(name  +" added to cart !");
+}
+</script>
+</body>
+</html>

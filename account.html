@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Account</title>
+    <meta name="view port" content="width=device-width , initial-scale=1.0">
+<style>
+    h1{
+  background-color: lightpink;
+  text-align: center;
+  padding: 8px;
+  font-family: "brush script mt" , cursive;
+  font-weight: bolder;
+  font-size :45px;
+}
+body{
+ background-color:whitesmoke;
+}
+h2{
+    font-style: initial;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+fieldset{
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    background-color: linen;
+}
+.form{
+    font-weight: bold;
+    font-size: 25px;
+}
+.form input{
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+}
+.form button{
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: lavenderblush;
+    width: 100px;
+    height: 30px;
+    margin-left: 650px;
+}
+.form button:hover{
+    background-color: lightpink;
+}
+footer{
+    background-color: lightpink;
+    padding: 30px;
+}
+.head{
+  background-color: lightpink;
+  font-weight: bold;
+  padding: 15px;
+}
+.head a{
+  text-decoration: none;
+  color: black;
+  margin: 70px;
+  font-size: 24px;
+  padding: 5px;
+}
+.head a:hover{
+  color: palevioletred;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>My Account</h1>
+<a href="index.html" target="_self">Home</a>
+<a href="offers.html" target="_self">Offers & Sales</a>
+<a href="cart.html" target="_self">My Cart</a>
+<a href="account.html" target="_self">My Account</a>
+<a href="checkout.html" target="_self">Check Out</a>
+</div>
+<h2>Create your account</h2>
+<form  id="myform" class="form"><fieldset>
+    <label for=" first name"> First Name:</label><br>
+    <input type="text" id="first name"  placeholder="Enter your first name"><br>
+    <label for=" last name"> Last Name:</label><br>
+    <input type="text" id="last name" placeholder="Enter your last name"><br>
+    <label for=" email"> Email:</label><br>
+    <input type="email" id="email" placeholder="Enter your email"><br>
+    <label for=" password"> Password:</label><br>
+    <input type="password" id="password" placeholder="Enter your password">
+</fieldset><br>
+<button type="submit" >Create</button><br><br><br><br>
+</form>
+<footer><h1>N Cosemetics</h1></footer>
+<script>
+document.querySelector("#myform").addEventListener("submit" ,function(event){
+    event.preventDefault();
+    let firstname=document.getElementById("first name").value;
+    let lastname=document.getElementById("last name").value;
+    let email=document.getElementById("email").value;
+    let password=document.getElementById("password").value;
+   if(!firstname || !lastname || !email || !password) {
+   alert("Form is incomplete !");
+   return;
+  }
+   else{
+    alert("Hello " +firstname +" your account is created successfully !");
+   }
+});
+</script>
+</body>
+</html>

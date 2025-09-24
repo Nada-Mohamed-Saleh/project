@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Makeup Products</title>
+<meta name="view port" content="width=device-width , initial-scale=1.0">
+<style>
+h1{
+  color: black;
+  font-family:"brush script mt" , cursive;
+  font-style: italic;
+  text-align: center;
+  font-size: 40px;
+  padding: 8px;
+}
+body{
+ background-color:whitesmoke;
+}
+table{
+    border-spacing: 30px;
+}
+table p{
+    font-weight: bold;
+    text-align: center;
+}
+table select{
+    border-radius: 20px;
+    border-width: 1px;
+    font-weight: bold;
+}
+table  label{
+    font-weight: bold;
+    text-align: center;
+}
+table img{
+    border-radius: 30px;
+}
+table button{
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: lavenderblush;
+    margin-left: 60px;
+}
+table button:hover{
+    background-color: lightpink;
+}
+footer{
+  background-color: lightpink;
+  padding: 45px;
+  text-align: center;
+}
+.head{
+  background-color: lightpink;
+  font-weight: bold;
+  padding: 30px;
+}
+.head a{
+  text-decoration: none;
+  color: black;
+  margin: 50px;
+  font-size: 24px;
+  padding: 5px;
+}
+.head a:hover{
+  color: palevioletred;
+  text-decoration: underline;
+}
+.Search{
+  border-radius: 30px;
+  background-color: white;
+  height: 30px;
+  width: 200px;
+}
+
+</style>
+</head>
+<body>
+    <div class="head">
+<h1>Makeup Products</h1>
+<a href="index.html" target="_self">Home</a>
+<a href="offers.html" target="_self">Offers & Sales</a>
+<a href="cart.html" target="_self">My Cart</a>
+<a href="account.html" target="_self">My Account</a>
+<a href="checkout.html" target="_self">Check Out</a>
+<input type="text"id="searchbox" class="Search" placeholder="  Search your product...">
+</div>
+<table>
+<tr>
+<td>
+    <div class="product">
+<img src="rare.webp" alt="Rare beauty blush" width="200">
+<p>Rare beauty blush - $25.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades">
+<option value="Hope">Hope</option>
+<option value="Encourage">Encourage</option>
+<option value="Believe">Believe</option>
+<option value="Faith">Faith</option>
+<option value="Happy">Happy</option>
+</select>
+<br><br>
+<button onclick="addtocart('Rare beauty blush',25,'rare.webp','Shades')">Add to cart</button>
+</div>
+</td>
+<td>
+    <div class="product">
+<img src="fentyg.webp" alt="Fenty lipgloss" width="200">
+<p>Fenty lipgloss - $22.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades2">
+<option value="Fenty glow">Fenty glow</option>
+<option value="Clear">Clear</option>
+<option value="Riri">Riri</option>
+<option value="Rose amber">Rose amber</option>
+<option value="Hot chocolit">Hot chocolit</option>
+</select>
+<br><br>
+<button onclick="addtocart('Fenty lipgloss',22,'fentyg.webp','Shades2')">Add to cart</button>
+</div>
+</td>
+<td>
+    <div class="product">
+<img src="LipOil.jpeg" alt="Elf lipoil" width="200">
+<p>Elf lip oil - $10.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades3">
+<option value="Rose envy">Rose envy</option>
+<option value="Honey talks">Honey talks</option>
+<option value="Jam session">Jam session</option>
+<option value="Crystal clear">Crystal clear</option>
+<option value="Money mauve">Money mauve</option>
+</select>
+<br><br>
+<button onclick="addtocart('Elf lip oil',10,'LipOil.jpeg','Shades3')">Add to cart</button>
+</div></td>
+<td>
+    <div class="product">
+<img src="lipliner.webp" alt="Huda beauty lipliner" width="200">
+<p>Huda beauty lipliner - $21.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades4">
+<option value="Muted pink">Muted pink</option>
+<option value="Warm brown">Warm brown</option>
+<option value="Rich brown">Rich brown</option>
+<option value="Honey beige">Honey beige</option>
+<option value="Very berry">Verry berry</option>
+</select>
+<br><br>
+<button onclick="addtocart('Huda beauty lipliner',21,'lipliner.webp','Shades4')">Add to cart</button>
+</div></td>
+<td>
+    <div class="product">
+<img src="dior.webp" alt="Dior foundation" width="175">
+<p>Dior foundation - $45.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades5">
+<option value="Warm">Warm</option>
+<option value="Neutral">Neutral</option>
+<option value="Cool">Cool</option>
+<option value="Warm olive">Warm olive</option>
+<option value="Dark">Dark</option>
+</select>
+<br><br>
+<button onclick="addtocart('Dior foundation',45,'dior.webp','Shades5')">Add to cart</button>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+    <div class="product">
+<img src="maybelline.png" alt="Maybelline concealer" width="200">
+<p>Maybelline concealer - $11.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades6">
+<option value="Fair">Fair</option>
+<option value="Light">Light</option>
+<option value="Honey">Honey</option>
+<option value="Sand">Sand</option>
+<option value="Ivory">Ivory</option>
+</select>
+<br><br>
+<button onclick="addtocart('Maybelline concealer',11,'maybelline.png','Shades6')">Add to cart</button>
+</div>
+</td>
+<td>
+    <div class="product">
+<img src="elf.webp" alt="Elf primer" width="200">
+<p>Elf primer - $15.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades10">
+<option value="pink">pink</option>
+<option value="Blue">Blue</option>
+</select>
+<br><br>
+<button onclick="addtocart('Elf primer',15,'elf.webp','Shades10')">Add to cart</button>
+</div>
+</td>
+<td>
+    <div class="product">
+<img src="highlighter.webp" alt="Patrick ta highlighter duo" width="200">
+<p>Patrick ta highlighter duo - $40.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades7">
+<option value="Sugar">Sugar</option>
+<option value="Baby">Baby</option>
+<option value="Honey">Honey</option>
+<option value="My love">My love</option>
+<option value="Bronze">Bronze</option>
+</select>
+<br><br>
+<button onclick="addtocart('Patrick ta highlighter duo',40,'highlighter.webp','Shades7')">Add to cart</button>
+</div>
+</td>
+<td>
+    <div class="product">
+<img src="bronzer.webp" alt="Charlotte tilbury bronzer" width="200">
+<p>Charlotte tilbury bronzer - $58.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades8">
+<option value="Fair">Fair</option>
+<option value="Medium">Medium</option>
+<option value="Tan">Tan</option>
+<option value="Deep">Deep</option>
+</select>
+<br><br>
+<button onclick="addtocart('Charlotte tilbury bronzer',58,'bronzer.webp','Shades8')">Add to cart</button>
+</div>
+</td>
+<td>
+    <div class="product">
+<img src="mario.jpg" alt="Makeup By Mario eyeliner" width="200">
+<p>Makeup By Mario eyeliner - $26.00</p>
+<label for="Shades">Choose your shade:</label>
+<select name="Shades" id="Shades9">
+<option value="Black">Black</option>
+<option value="Brown">Brown</option>
+<option value="Taupe">Taupe</option>
+<option value="Plum">Plum</option>
+<option value="Blue">Blue</option>
+</select>
+<br><br>
+<button onclick="addtocart('Makeup By Mario eyeliner',26,'mario.jpg','Shades9')">Add to cart</button>
+</div>
+</td>
+</tr>
+</table>
+<footer>
+<h1>N Cosemetics</h1>
+</footer>
+<script>
+    document.querySelector(".Search").addEventListener("input" ,function (){
+  let search=this.value.toLowerCase();
+  let products=document.querySelectorAll(".product");
+  products.forEach(product => {
+    let name=product.innerText.toLowerCase();
+    if(name.includes(search)){
+       product.style.display="block";
+    }
+    else{
+      product.style.display="none";
+    }
+  });
+});
+function addtocart(name,price,image,shadeId){
+  let shade=document.getElementById(shadeId).value;
+  let cart=JSON.parse(localStorage.getItem("cart")) ;
+  cart.push({ name ,  price , image , shade});
+  localStorage.setItem("cart",JSON.stringify(cart));
+  alert(name +" ( "  + "shade :" + shade + " ) " +" added to cart !");
+}
+</script>
+</body>
+</html>

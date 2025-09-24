@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Skincare products</title>
+    <meta name="view port" content="width=device-width , initial-scale=1.0">
+<style>
+    h1{
+  background-color: lightpink;
+  text-align: center;
+  padding: 8px;
+  font-family: "brush script mt" , cursive;
+  font-weight: bolder;
+  font-size :45px;
+}
+body{
+  background-color: whitesmoke;
+}
+table{
+  border-spacing: 50px;
+}
+table img{
+  border-radius: 30px;
+}
+table p{
+  font-weight: bold;
+  text-align: center;
+}
+table button{
+  border-radius: 20px;
+    font-weight: bold;
+    background-color: lavenderblush;
+    margin-left: 60px;
+}
+table button:hover{
+  background-color: lightpink;
+}
+a{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+}
+a:hover{
+    color: palevioletred;
+}
+footer{
+  background-color: lightpink;
+  padding: 45px;
+  text-align: center;
+  
+}
+.head{
+  background-color: lightpink;
+  font-weight: bold;
+  padding: 30px;
+}
+.head a{
+  text-decoration: none;
+  color: black;
+  margin: 50px;
+  font-size: 24px;
+  padding: 5px;
+}
+.head a:hover{
+  color: palevioletred;
+  text-decoration: underline;
+}
+.Search{
+  border-radius: 30px;
+  background-color: white;
+  height: 30px;
+  width: 200px;
+}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Skin Products</h1>
+<a href="index.html" target="_self">Home</a>
+<a href="offers.html" target="_self">Offers & Sales</a>
+<a href="cart.html" target="_self">My Cart</a>
+<a href="account.html" target="_self">My Account</a>
+<a href="checkout.html" target="_self">Check Out</a>
+<input type="text" class="Search" placeholder="  Search your product...">
+</div>
+<div class="products">
+<table>
+<tr>
+  <td>
+    <div class="product">
+   <img src="rhodelip.webp" alt="Rhode liptreatment" width="200"><br>
+   <p>Rhode peptide liptreatment - $32.00</p>
+   <button onclick="addtocart('Rhode peptide liptreatment ',32,'rhodelip.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="laneige.webp" alt="laneige lipmask" width="200"><br>
+   <p>Laneige lip sleeping mask- $24.00</p>
+   <button onclick="addtocart('Laneige lip sleeping mask',24,'laneige.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="rhodeface.png" alt=" Rhode skincare" width="283"><br>
+   <p>Rhode glazing milk facial essence - $35.00</p>
+   <button onclick="addtocart('Rhode glazing milk facial essence',35,'rhodeface.png')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="sunscreen.webp" alt="Beauty of joseon " width="200"><br>
+   <p>Beauty of Joseon sunscreen - $18.00</p>
+   <button onclick="addtocart('Beauty of Joseon sunscreen',18,'sunscreen.webp')">Add to cart</button>
+   </div>
+  </td>
+  <td>
+    <div class="product">
+    <img src="recipeface.jpg" alt="Glow recipe face mask" width="200"><br>
+   <p>Glow recipe sleeping face mask - $8.00</p>
+   <button onclick="addtocart('Glow recipe sleeping face mask',8,'recipeface.jpg')">Add to cart</button>
+   </div>
+  </td>
+</tr>
+<tr>
+<td>
+    <div class="product">
+  <img src="fentyskin.jpg" alt="Fenty skin body scrub" width="140"><br>
+   <p>Fenty skin body duo mini body scrub + moisturizer - $80.00</p>
+<button onclick="addtocart('Fenty skin body duo mini body scrub + moisturizer',80,'fentyskin.jpg')">Add to cart</button>
+</div>
+</td>
+<td>
+    <div class="product">
+  <img src="solbody.jpg" alt="Sol de jenaro body scrub" width="150"><br>
+   <p>Sol de jenaro body scrub - $42.00</p>
+   <button onclick="addtocart('Sol de jenaro body scrub',42,'solbody.jpg')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="sephora.png" alt="Sephora cleansing wipes" width="250"><br><br>
+   <p>Sephora cleansing wipes - $4.00</p><br>
+   <button onclick="addtocart('Sephora cleansing wipes',4,'sephora.png')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="oui3.webp" alt="OUAI detox face cleanser" width="200"><br>
+   <p>OUAI detox face cleanser - $30.00</p>
+   <button onclick="addtocart('OUAI detox face cleanser',30,'oui3.webp')">Add to cart</button>
+   </div>
+</td>
+<td>
+    <div class="product">
+  <img src="eye.png" alt="Beauty of joseon eyecream" width="200"><br>
+   <p>Beauty of Joseon eyecream - $17.00</p>
+   <button onclick="addtocart('Beauty of Joseon eyecream',17,'eye.png')">Add to cart</button>
+   </div>
+</td>
+</tr>
+</table>
+</div>
+<footer>
+<h1>N Cosemetics</h1>
+</footer>
+<script>
+    document.querySelector(".Search").addEventListener("input" ,function (){
+  let search=this.value.toLowerCase();
+  let products=document.querySelectorAll(".product");
+  products.forEach(product => {
+    let name=product.querySelector("p").innerText.toLowerCase();
+    if(name.includes(search)){
+       product.style.display="block";
+    }
+    else{
+      product.style.display="none";
+    }
+  });
+});
+    function addtocart(name,price,image){
+  let cart=JSON.parse(localStorage.getItem("cart")) ;
+  cart.push({ name ,  price , image});
+  localStorage.setItem("cart",JSON.stringify(cart));
+  alert(name  +" added to cart !");
+}
+</script>
+</body>
+</html>

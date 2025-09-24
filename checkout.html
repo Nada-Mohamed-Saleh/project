@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Check out</title>
+<meta name="view port" content="width=device-width , initial-scale=1.0">
+<style>
+     h1{
+  background-color: lightpink;
+  text-align: center;
+  padding: 8px;
+  font-family: "brush script mt" , cursive;
+  font-weight: bolder;
+  font-size :45px;
+}
+body{
+ background-color:whitesmoke;
+}
+h3{
+    font-style: initial;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+fieldset{
+    border-radius: 30px;
+    text-align: center;
+    background-color: linen;
+}
+.check input{
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    font-style: initial;
+    font-weight: bold;
+}
+.check select{
+    width: 305px;
+    height: 40px;
+    border-radius: 10px;
+    font-style: initial;
+    font-weight: bold;
+}
+legend{
+    font-weight: bold;
+    font-style: initial;
+    font-size: 24px;
+    text-align: left;
+}
+.check button{
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: lavenderblush;
+    width: 100px;
+    height: 30px;
+    margin-left: 650px;
+}
+.check button:hover{
+    background-color: lightpink;
+}
+footer{
+    background-color: lightpink;
+    padding: 30px;
+    text-align: center;
+}
+.cards{
+    font-weight: bold;
+    font-style: initial;
+    font-size: 20px;
+}
+a{
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+}
+a:hover{
+    color: palevioletred;
+}
+.head{
+  background-color: lightpink;
+  font-weight: bold;
+  padding: 15px;
+}
+.head a{
+  text-decoration: none;
+  color: black;
+  margin: 70px;
+  font-size: 24px;
+  padding: 5px;
+}
+.head a:hover{
+  color: palevioletred;
+  text-decoration: underline;
+}
+.credit{
+    padding-left: 150px;
+}
+.card{
+    width:100px;
+    text-align: center;
+    margin-left: 490px;
+    padding-right: 200px;
+    
+}
+#checkout{
+    font-weight: bold;
+    font-size: 24px;
+    color: brown;
+    font-style: initial;
+    text-align: center;
+    border: 2px solid;
+    background-color: linen;
+}
+</style>
+</head>
+<body>
+<div class="head">
+<h1>Check Out</h1>
+<a href="index.html" target="_self">Home</a>
+<a href="offers.html" target="_self">Offers & Sales</a>
+<a href="cart.html" target="_self">My Cart</a>
+<a href="account.html" target="_self">My Account</a>
+<a href="checkout.html" target="_self">Check Out</a>
+</div>
+<h3>Delivery takes from 7-15 days</h3>
+<form  id="myform" class="check"> <fieldset>
+<select name="country" id="country">
+<option value="Egypt">Egypt</option>
+<option value="USA">USA</option>
+<option value="UK">UK</option>
+<option value="Ireland">Ireland</option>
+<option value="UAE">UAE</option>
+</select><br>
+<input type="text" id="first name" name="first name" placeholder="First name"><br>
+<input type="text" id="last name" name="last name" placeholder="Last name"><br>
+<input type="text" id="address" name="address" placeholder="Address"><br>
+<input type="number" id="apartment" name="apartment" placeholder="Apartment no."><br>
+<input type="text" id="city" name="city" placeholder="City"><br>
+<input type="number"id="phone" name="phone" placeholder="Phone number">
+</fieldset><br><br>
+<fieldset><legend>Payment methods</legend>
+<div class="cards">
+    <fieldset class="card">
+<input type="radio" id="credit" name="payment" value="Credit">
+<label for="credit">Credit Card</label><br><br>
+<div class="credit">
+<input type="number" id="card number" name="card number" placeholder="Card number"><br>
+<input type="datetime" id="exp date" name="exp date" placeholder="Expiration date(MM/YY)"><br>
+<input type="number" id="security" name="security" placeholder="Security code"><br>
+<input type="text" id="card name" name="card name" placeholder="Name on card"><br>
+</div><br>
+    </fieldset>
+<input type="radio" id="cash" name="payment" value="Cash">
+<label for="cash">Cash on delivery</label></div><br>
+</fieldset>
+<br><br>
+<p id="checkout"></p><br><br>
+<button type="submit" onclick="out()">Pay Now!</button><br><br><br>
+</form>
+<footer>
+    <h1>N Cosemetics</h1>
+</footer>
+<script>
+document.querySelector("#myform").addEventListener("submit" ,function(event){
+    event.preventDefault();
+    let firstname=document.getElementById("first name").value;
+    let lastname=document.getElementById("last name").value;
+    let address=document.getElementById("address").value;
+    let apartment=document.getElementById("apartment").value;
+    let city=document.getElementById("city").value;
+    let phone=document.getElementById("phone").value;
+    let cardnumber=document.getElementById("card number").value;
+    let expdate=document.getElementById("exp date").value;
+    let security=document.getElementById("security").value;
+    let cardname=document.getElementById("card name").value;
+    let payment=document.getElementById("myform").payment.value;
+   if(!firstname || !lastname || !address|| !apartment || !city || !phone || !payment) {
+   alert("Form is incomplete !");
+   return;
+  }
+   else{
+    if(payment=="Cash"){
+        alert("Hello " + firstname + " your order has been placed")
+        
+    }
+    else if(payment=="Credit") { 
+         if( !cardnumber || !expdate ||!security || !cardname){
+        alert("Form is incomplete !");
+    } 
+   else {
+      alert( "Hello "+ firstname +" your payment was successful !");
+    
+    }
+   }
+}
+});
+let cart=JSON.parse(localStorage.getItem("cart"));
+let total=0;
+cart.forEach(item => {
+    total+=item.price;
+});
+document.getElementById("checkout").innerHTML="Total : $"+total;
+</script>
+</body>
+</html>
