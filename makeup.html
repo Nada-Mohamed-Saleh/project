@@ -262,11 +262,12 @@ footer{
 });
 function addtocart(name,price,image,shadeId){
   let shade=document.getElementById(shadeId).value;
-  let cart=JSON.parse(localStorage.getItem("cart")) ;
+  let cart=JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({ name ,  price , image , shade});
   localStorage.setItem("cart",JSON.stringify(cart));
   alert(name +" ( "  + "shade :" + shade + " ) " +" added to cart !");
 }
 </script>
 </body>
+
 </html>
